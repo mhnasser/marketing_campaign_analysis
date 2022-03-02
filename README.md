@@ -39,3 +39,5 @@ value of the approach and convince the more skeptical within the company.
 The data set contains socio-demographic and firmographic features about 2.240 customers who
 were contacted. Additionally, it contains a flag for those customers who responded the campaign,
 by buying the product.
+
+![](01_images/utils/00_data_dict.PNG)
