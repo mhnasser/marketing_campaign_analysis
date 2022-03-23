@@ -11,7 +11,7 @@ value to the company through open scope projects.
 In this project, given presented a sample dataset, that mocks metainformation on the customer
 and on the comapany campaign interactions with that customer
 
-the objective of this project is to understand the data, find business opportunities, insights and to propose
+The objective of this project is to understand the data, find business opportunities, insights and to propose
 any data driven action to optimize the campaigns results & generate value to the company.
 
 ## The Company
