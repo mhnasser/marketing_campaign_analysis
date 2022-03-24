@@ -2,9 +2,13 @@ import sys
 import os
 import streamlit as st
 import pandas as pd
+import pickle
 from io import BytesIO, StringIO
 
 
+## Configs
+
+# Style
 STYLE = """
 <style>
 img {
@@ -12,6 +16,17 @@ img {
 }
 <style>
 """
+
+# Paths
+cluster_model_path = r"..\05_models\customer_cluster_model.pkl"
+customer_acceptance_model_path = r"..\05_models\customer_customer_acceptance.pkl"
+
+# Models
+with open(cluster_model_path, "rb") as m:
+    clustering_model = pickle.load(m)
+
+with open(customer_acceptance_model_path, "rb") as m:
+    customer_acceptance_model = pickle.load(m)
 
 
 def main():
