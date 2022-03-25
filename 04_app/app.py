@@ -4,6 +4,8 @@ import streamlit as st
 import pandas as pd
 import pickle
 from io import BytesIO, StringIO
+from optimizer import optimized_customer_selection
+from etl import clustering_customers, predict_acceptance_proba, data_prep
 
 
 ## Configs
@@ -17,26 +19,14 @@ img {
 <style>
 """
 
-# Paths
-cluster_model_path = r"..\05_models\customer_cluster_model.pkl"
-customer_acceptance_model_path = r"..\05_models\customer_customer_acceptance.pkl"
-
-# Models
-with open(cluster_model_path, "rb") as m:
-    clustering_model = pickle.load(m)
-
-with open(customer_acceptance_model_path, "rb") as m:
-    customer_acceptance_model = pickle.load(m)
-
 
 def main():
 
     header = st.container()
     st.image(r"..\01_images\app\logo.png", use_column_width=True)
+
     with header:
         st.title("Marketing Campaign Optimizer")
-
-    # st.info(__doc__)
     st.markdown(STYLE, unsafe_allow_html=True)
     file = st.file_uploader(
         "Upload Customer Data", type=["csv"], accept_multiple_files=False
@@ -51,6 +41,10 @@ def main():
     data = pd.read_csv(file)
     st.dataframe(data.head(5))
     file.close()
+
+    budget_input = st.number_input("Budget available for campaign", min_value=0)
+    contact_cost = st.number_input("Contact Cost per customer", min_value=0)
+    profit = st.number_input("Profit if customer accepts the campaign", min_value=0)
 
 
 main()
