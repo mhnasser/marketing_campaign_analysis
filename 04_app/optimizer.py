@@ -1,5 +1,3 @@
-import pandas as pd
-import numpy as np
 import pulp
 
 
@@ -94,4 +92,4 @@ def optimized_customer_selection(data, unit_cost, unit_profit, budget):
     expected_profit = pulp.value(optmizer.problem.objective)
     amount_invested = data.shape[0] * 3
 
-    return data, expected_profit, amount_invested
+    return data, expected_profit, float(amount_invested)
