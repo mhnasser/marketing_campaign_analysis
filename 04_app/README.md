@@ -1,6 +1,6 @@
 # How to use the App
 
-![](01_images/utils/app1.PNG)
+![Image 1](01_images/utils/app1.PNG)
 
 The uploaded file *MUST* contain the following columns:
 
@@ -19,4 +19,4 @@ The uploaded file *MUST* contain the following columns:
 
 After Uploading the file, a window with input boxes will appear:
 
-![](01_images/utils/app2.PNG)
+![Image 2](01_images/utils/app2.PNG)
