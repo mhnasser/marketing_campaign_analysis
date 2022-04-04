@@ -64,10 +64,10 @@ def num_cmp_accepted(data):
 
 # Etl
 def data_prep(data):
-    """Function made to do the first data preparation so that the dataframe meet model output requirements
+    """[summary]
 
     Args:
-        data (pandas.DataFrame): [description]
+        data ([type]): [description]
     """
     data.Income.fillna(0, inplace=True)
     data.Dt_Customer = pd.to_datetime(data.Dt_Customer)
@@ -82,13 +82,13 @@ def data_prep(data):
 
 # Predicting
 def clustering_customers(data):
-    """Function that applies the clustering model on the dataframe
+    """[summary]
 
     Args:
-        data (pd.DataFrame)
+        data ([type]): [description]
 
     Returns:
-        [pd.DataFrame]: Dataframe with cluster column in it
+        [type]: [description]
     """
     df_aux = deepcopy(
         data[
@@ -125,13 +125,13 @@ def clustering_customers(data):
 
 
 def predict_acceptance_proba(data):
-    """Function that applies the customer acceptance probability prediction model
+    """[summary]
 
     Args:
-        data (pd.DataFrame)
+        data ([type]): [description]
 
     Returns:
-        [pd.DataFrame]: Dataframe with customer acceptance probability column in it
+        [type]: [description]
     """
     df_aux = deepcopy(
         data[

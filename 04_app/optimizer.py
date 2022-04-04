@@ -81,7 +81,7 @@ class CustomerSelection:
 
 def optimized_customer_selection(data, unit_cost, unit_profit, budget):
 
-    optmizer = CustomerSelection(data, 3, 11, 6720)
+    optmizer = CustomerSelection(data, unit_cost, unit_profit, budget)
     optmizer.definie_problem()
     optmizer.create_decision_variables()
     optmizer.create_optimization_function()
