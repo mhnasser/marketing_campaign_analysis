@@ -16,3 +16,7 @@ The uploaded file *MUST* contain the following columns:
 * Age
 * MntGoldProds
 * Recency
+
+After Uploading the file, a window with input boxes will appear:
+
+![](01_images/utils/app2.PNG)
