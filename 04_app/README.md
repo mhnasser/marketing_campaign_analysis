@@ -13,7 +13,8 @@ The uploaded file *MUST* contain the following columns:
 * MntSweetProducts
 * MntWines
 * MntFishProducts
-* Age
+* YearOfEnrollment
+* Year_Birth
 * MntGoldProds
 * Recency
 
