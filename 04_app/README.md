@@ -6,17 +6,22 @@ The uploaded file *MUST* contain the following columns:
 
 * ID
 * Income
+* NumWebVisitsMonth
 * NumCatalogPurchases
 * NumWebPurchases
-* MntFruits
+* NumWebPurchases
 * NumStorePurchases
+* MntFruits
 * MntMeatProducts
 * MntSweetProducts
+* MntGoldProds
 * MntWines
 * MntFishProducts
+* AcceptedCmp3
+* AcceptedCmp5
 * YearOfEnrollment
 * Year_Birth
-* MntGoldProds
+* Marital_Status
 * Recency
 
 After Uploading the file, a window with input boxes will appear:
