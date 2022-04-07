@@ -50,29 +50,29 @@ def main():
     with st.form(key="form1"):
         budget_input = st.number_input("Budget available for campaign", min_value=None)
         contact_cost = st.number_input("Contact Cost per customer", min_value=None)
-        sucess_profit = st.number_input("Profit if customer accepts the campaign", min_value=None)
+        sucess_profit = st.number_input(
+            "Profit if customer accepts the campaign", min_value=None
+        )
 
-        submit = st.form_submit_button(label = "Submit")
+        submit = st.form_submit_button(label="Submit")
 
     if submit:
-        data, expected_profit, amount_invested = optimized_customer_selection(data, contact_cost, sucess_profit, budget_input)
+        data, expected_profit, amount_invested = optimized_customer_selection(
+            data, contact_cost, sucess_profit, budget_input
+        )
 
         col_1, col_2 = st.columns(2)
 
         with col_1:
-            st.metric(label="Amount to be invested",
-            value = "$ %.2f" % amount_invested
-            )
+            st.metric(label="Amount to be invested", value="$ %.2f" % amount_invested)
 
         with col_2:
-            st.metric(label="Liquid Profit expected profit",
-            value = "$ %.2f" % expected_profit
-            )
+            st.metric(label="Liquid Profit expected", value="$ %.2f" % expected_profit)
 
         @st.cache
         def convert_df(df):
-            return df.to_csv(index=False).encode('utf-8')
-        
+            return df.to_csv(index=False).encode("utf-8")
+
         csv = convert_df(data)
 
         st.download_button(
@@ -80,6 +80,8 @@ def main():
             csv,
             "best_customers.csv",
             "text/csv",
-            key='download-csv'
-            )
+            key="download-csv",
+        )
+
+
 main()
