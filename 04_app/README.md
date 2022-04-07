@@ -4,6 +4,7 @@
 
 The uploaded file *MUST* contain the following columns:
 
+* ID
 * Income
 * NumCatalogPurchases
 * NumWebPurchases
