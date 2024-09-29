@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-import pickle
+import joblib
 from copy import deepcopy
 from sklearn.preprocessing import StandardScaler
 
@@ -25,11 +25,8 @@ categorical_columns = [
 ]
 
 # Models
-with open(cluster_model_path, "rb") as m:
-    clustering_model = pickle.load(m)
-
-with open(customer_acceptance_model_path, "rb") as m:
-    customer_acceptance_model = pickle.load(m)
+clustering_model = joblib.load(cluster_model_path)
+customer_acceptance_model = joblib.load(customer_acceptance_model_path)
 
 
 ## Functions
@@ -93,18 +90,18 @@ def clustering_customers(data):
     df_aux = deepcopy(
         data[
             [
-                "Income",
-                "NumCatalogPurchases",
-                "NumWebPurchases",
-                "MntFruits",
-                "NumStorePurchases",
-                "MntMeatProducts",
-                "MntSweetProducts",
-                "MntWines",
-                "MntFishProducts",
-                "Age",
-                "MntGoldProds",
-                "Recency",
+                'Income',
+                'NumStorePurchases',
+                'NumCatalogPurchases',
+                'MntSweetProducts',
+                'NumWebPurchases',
+                'MntFruits',
+                'MntMeatProducts',
+                'MntFishProducts',
+                'MntWines',
+                'Age',
+                'MntGoldProds',
+                'Recency'
             ]
         ]
     )
@@ -136,23 +133,22 @@ def predict_acceptance_proba(data):
     df_aux = deepcopy(
         data[
             [
-                "MntFishProducts",
-                "Cluster",
-                "MntGoldProds",
-                "MntSweetProducts",
-                "Age",
-                "Income",
-                "NumWebVisitsMonth",
-                "NumStorePurchases",
-                "MntWines",
-                "Marital_Status",
-                "AcceptedCmp3",
-                "NumCatalogPurchases",
-                "YearsOfEnrollment",
-                "AcceptedCmp5",
-                "MntMeatProducts",
-                "qtd_cmp_accepted",
-                "Recency",
+                'MntFruits',
+                'AcceptedCmp3',
+                'Income',
+                'Cluster',
+                'MntGoldProds',
+                'MntSweetProducts',
+                'NumWebVisitsMonth',
+                'NumStorePurchases',
+                'Marital_Status',
+                'MntWines',
+                'NumCatalogPurchases',
+                'YearsOfEnrollment',
+                'AcceptedCmp5',
+                'MntMeatProducts',
+                'qtd_cmp_accepted',
+                'Recency'
             ]
         ]
     )

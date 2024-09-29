@@ -69,7 +69,7 @@ def main():
         with col_2:
             st.metric(label="Liquid Profit expected", value="$ %.2f" % expected_profit)
 
-        @st.cache
+        @st.cache_data
         def convert_df(df):
             return df.to_csv(index=False).encode("utf-8")
 
